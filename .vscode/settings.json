@@ -1,8 +1,7 @@
 {
     "files.exclude": {
         "node_modules": true,
-        "dist1/": true,
-        "Design Assets1/": true,
+        "dist/": true,
         ".cache/": true,
         ".parcel-cache/": true
     },
