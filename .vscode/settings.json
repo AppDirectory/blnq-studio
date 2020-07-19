@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        "dist1/": true,
+        "Design Assets1/": true,
+        ".cache/": true,
+        ".parcel-cache/": true
+    },
+    "editor.fontFamily": "Fira Code",
+    "less.lint.duplicateProperties": "error"
+}

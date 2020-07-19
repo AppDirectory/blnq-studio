@@ -1,0 +1,52 @@
+{
+    "licenseKey": "546069fc-aa83-48de-8a0b-87a8c2fdf4d0",
+    "runtime": {
+        "arguments": "--ignore-certificate-errors  --enable-crash-reporting --no-sandbox",
+        "version": "15.80.50.34"
+    },
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "Blnq Studio",
+        "description": "Blnq Studio",
+        "url": "{url}/ofstart",
+        "uuid": "Blnq Studio",
+        "autoShow": true,
+        "minWidth": 400,
+        "minHeight": 400,
+        "defaultWidth": 1024,
+        "defaultHeight": 768,
+        "defaultCentered": true,
+        "saveWindowState": true,
+        "frame": true,
+        "icon": "{url}/manifest/icon-desktop@512w.png",
+        "taskbarIcon": "{url}/manifest/icon-desktop@512w.png",
+        "contextMenu": true,
+        "plugins": true,
+        "accelerator": {
+            "zoom": true
+        }
+    },
+    "splashScreenImage": "{url}/manifest/splashscreen1.png",
+    "shortcut": {
+        "company": "Blnq",
+        "description": "A Collaborative Web Development Platform using HTML, CSS and JavaScript with a focus on Design Systems and Financial Applications using OpenFin and Electron",
+        "name": "Blnq Studio",
+        "icon": "{url}/manifest/icon.ico",
+        "target": ["start-menu", "desktop"]
+    },
+    "dialogSettings": {
+        "logo": "{url}/manifest/installer-logo.png",
+        "bgColor": 4280888638,
+        "textColor": 4294967295,
+        "progressBarBgColor": 4279967275,
+        "progressBarFillColor": 4294955776,
+        "progressBarBorderColor": 4279967275
+    },
+    "offlineAccess": true,
+    "supportInformation": {
+        "company": "Blnq",
+        "product": "Blnq Studio",
+        "email": "info@blnq.io",
+        "forwardErrorReports": true
+    }
+}

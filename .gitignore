@@ -1,0 +1,8 @@
+.DS_Store
+.env
+mailerKey.json
+/node_modules
+/dist
+/.cache
+/.parcel-cache
+
