@@ -21,7 +21,6 @@ const checkAuthenticated = (req, res, next) => {
         }
     }
 };
-// pretty sure this is shit....
 const optionallyAuthenticated = (req, res, next) => {
     const jwt = req.cookies.jwt;
     if (jwt) {

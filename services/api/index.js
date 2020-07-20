@@ -50,7 +50,6 @@ const routes = (app) => {
             const { html, files, displayname, library } = response;
             let headFiles = '';
 
-            // this is shite (sorry! I should've done this better) - need to fix the whole config thing
             if (!!library) {
                 const libraryFiles = defaultConfig.libraries.find(
                     (lib) => lib.id === library
@@ -127,7 +126,6 @@ const routes = (app) => {
             const { html, files, displayname, library } = response;
             let headFiles = '';
 
-            // this is shite (sorry! I should've done this better) - need to fix the whole config thing
             if (!!library) {
                 const libraryFiles = defaultConfig.libraries.find(
                     (lib) => lib.id === library
