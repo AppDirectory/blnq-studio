@@ -147,15 +147,7 @@ export default function openfinSetup() {
             start.href = startlink;
             installButtons.append(start);
 
-            var url =
-                window.location.protocol +
-                '//' +
-                window.location.host +
-                '/openfin';
-
             var installerURL = '';
-            //var linkWrapper = document.createElement('div');
-            //var linkWrapper = querySelector('#installButtons');
             var link = document.createElement('a');
             link.classList.add('install-button');
             var os;

@@ -5,4 +5,5 @@ mailerKey.json
 /dist
 /.cache
 /.parcel-cache
+/hidden
 
