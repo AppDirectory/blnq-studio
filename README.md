@@ -1,5 +1,7 @@
 # Blnq Studio
 
+[Online Demo](https://studio.blnq.io)
+
 ## Getting Started
 
 `npm run setup`
