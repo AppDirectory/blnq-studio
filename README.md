@@ -8,6 +8,14 @@
 
 This will run through a few questions for your environment variables etc, and generate a PG Database if needed.
 
+##Docker 
+
+To get started with Blnq Studio using docker, run the following command to Start the docker container in the background.
+
+```docker-compose up -d``` or if you want to run it in the foreground, remove the ```-d``` flag from the command.
+
+This will start up the Postgres and the blnq node environment within the container. Which you can now access by going to ```http://localhost:3000/dashboard```
+
 ## Developing
 
 Make sure in your .env file you have NODE_ENV to anything but 'production'
