@@ -64,8 +64,11 @@ export default () => {
         filesBody.innerHTML = '';
 
         if (navigator.share) {
+            try {
+                document.querySelector('.sharevia').remove();
+            } catch (e) {}
             var shareSection = document.createRange()
-                .createContextualFragment(`<section class="section">
+                .createContextualFragment(`<section class="section sharevia">
     <h2 class="section__header">Share</h2>
     <div class="section__body">
         <button class="btn btn--setting">Share Via...</button>
