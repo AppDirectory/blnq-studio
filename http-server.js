@@ -46,13 +46,6 @@ const csrfMiddleware = csurf({
 
     app.locals.port = port;
 
-    if (process.env.NODE_ENV !== 'production') {
-        var player = require('play-sound')((opts = {}));
-        player.play('./scripts/blnqstudioready.mp3', function (err) {
-            if (err) throw err;
-        });
-    }
-
     console.log(
         '\x1b[33m%s\x1b[0m',
         '------------------------------------------'
