@@ -65,6 +65,18 @@ export default function zoomSetup() {
             label: 'iPhone',
             options: [
                 {
+                    id: 'iPhone12',
+                    name: 'iPhone 12/12 Pro (390x844)',
+                    width: '390px',
+                    height: '844px'
+                },
+                {
+                    id: 'iPhone12Mini',
+                    name: 'iPhone 12 Mini (375x812)',
+                    width: '375px',
+                    height: '812px'
+                },
+                {
                     id: 'iPhone8',
                     name: 'iPhone 8 (375x667)',
                     width: '375px',
@@ -77,28 +89,10 @@ export default function zoomSetup() {
                     height: '736px'
                 },
                 {
-                    id: 'iPhoneSE',
-                    name: 'iPhone SE (320x568)',
+                    id: 'iPhone5SE',
+                    name: 'iPhone 5 SE (320x568)',
                     width: '320px',
                     height: '568px'
-                },
-                {
-                    id: 'iPhoneXS',
-                    name: 'iPhone XS (375x812)',
-                    width: '375px',
-                    height: '812px'
-                },
-                {
-                    id: 'iPhoneXR',
-                    name: 'iPhone XR/XS Max (414x896)',
-                    width: '414px',
-                    height: '896px'
-                },
-                {
-                    id: 'iPhoneXSMax',
-                    name: 'iPhone XS Max (414x896)',
-                    width: '414px',
-                    height: '896px'
                 }
             ]
         },
