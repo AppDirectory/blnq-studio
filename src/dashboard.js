@@ -31,13 +31,11 @@ function createCard(obj) {
     </div>
     <div class="card__info">
     
-    <img class="avatar-img" src="/avatar/${
-        obj.user_id
-    }" onload="this.style.display='block'"/>
+    <img class="avatar-img" src="/avatar/${obj.user_id
+        }" onload="this.style.display='block'"/>
     
     <div class="flex">  
-        <div class="card__name">${
-            obj.displayname != '' ? obj.displayname : 'An Untitled Masterpiece'
+        <div class="card__name">${obj.displayname != '' ? obj.displayname : 'An Untitled Masterpiece'
         }</div>
         <div class="card__author">${obj.username}</div>
     </div>
@@ -77,7 +75,7 @@ function createCard(obj) {
                     iFrame.remove();
                 });
             }
-        } catch (e) {}
+        } catch (e) { }
 
         var iframe = document.createElement('iframe');
         iframe.src = `p/${blnqName}`;
@@ -102,7 +100,7 @@ function createCard(obj) {
                     iFrame.remove();
                 });
             }
-        } catch (e) {}
+        } catch (e) { }
     });
 
     //card.querySelector('.card__images').append(iframe);
@@ -148,8 +146,7 @@ function time2TimeAgo(someDateInThePast) {
             let s =
                 Math.floor((difference / 1000 / 60 / 60) % 24) == 1 ? '' : 's';
             result =
-                `${Math.floor((difference / 1000 / 60 / 60) % 24)} hr${s}${
-                    result == '' ? '' : ','
+                `${Math.floor((difference / 1000 / 60 / 60) % 24)} hr${s}${result == '' ? '' : ','
                 } ` + result;
         }
     }
@@ -182,7 +179,7 @@ loadDashboard();
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/blnq-sw.js').then(() => {});
+        navigator.serviceWorker.register('/blnq-sw.js').then(() => { });
     });
 }
 
@@ -419,7 +416,7 @@ if (typeof window.fin !== 'undefined') {
 const showInstallPromotion = () => {
     try {
         document.querySelector('#pwaButton').remove();
-    } catch (e) {}
+    } catch (e) { }
     const installButtons = document.querySelector('#installButtons');
 
     var link = document.createElement('a');
@@ -480,7 +477,7 @@ if (installButtons) {
     </svg>
     
         <div>
-            <div>Get it on</div>
+            <div>Open-source on</div>
             <div>GitHub</div>
         </div>`;
 
