@@ -17,13 +17,14 @@ const csrfMiddleware = csurf({
     cookie: true
 });
 
-(async () => {
+(async() => {
     if (process.env.NODE_ENV !== 'production') {
         await require('./build');
     }
     const auth = require('./services/auth');
 
     app.use(helmet());
+    app.use(helmet.frameguard());
     app.use(cookieParser());
 
     app.use(bodyParser.json({ limit: '1mb' }));
@@ -39,7 +40,7 @@ const csrfMiddleware = csurf({
     app.use('/auth/', auth);
 
     app.use(csrfMiddleware);
-    app.use(function (req, res, next) {
+    app.use(function(req, res, next) {
         res.redirect('/404');
         next();
     });
