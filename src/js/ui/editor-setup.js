@@ -16,7 +16,7 @@ const debounceRate = 100;
 const formatDocumentButton = document.querySelector('#formatDocument');
 const formatDocumentButton1 = document.querySelector('#formatDocument1');
 
-const infoTemplate = function (content) {
+const infoTemplate = function(content) {
     return `<div class="editor__info">${content}</div>`;
 };
 
@@ -28,12 +28,10 @@ monaco.languages.registerDocumentFormattingEditProvider('css', {
             useTabs: true,
             tabWidth: 4
         });
-        return [
-            {
-                range: model.getFullModelRange(),
-                text
-            }
-        ];
+        return [{
+            range: model.getFullModelRange(),
+            text
+        }];
     }
 });
 
@@ -47,17 +45,15 @@ monaco.languages.registerDocumentFormattingEditProvider('javascript', {
             tabWidth: 4
         });
 
-        return [
-            {
-                range: model.getFullModelRange(),
-                text
-            }
-        ];
+        return [{
+            range: model.getFullModelRange(),
+            text
+        }];
     }
 });
 
 self.MonacoEnvironment = {
-    getWorkerUrl: function (moduleId, label) {
+    getWorkerUrl: function(moduleId, label) {
         if (label === 'json') {
             return '/json.worker.js';
         }
@@ -141,7 +137,8 @@ const editorOptions = {
         horizontal: 'auto',
         verticalScrollbarSize: 9,
         horizontalScrollbarSize: 9
-    }
+    },
+    hover: { delay: 1500, enabled: true }
 };
 
 const createEditor = (options, model, target) =>
@@ -198,8 +195,7 @@ const editorSetup = ({
     blnqName = '',
     config = -1
 } = {}) => {
-    const html = createEditor(
-        {
+    const html = createEditor({
             ...editorOptions,
             quickSuggestions: true,
             snippetSuggestions: 'top',
@@ -277,7 +273,7 @@ const editorSetup = ({
     const bindHTML = () => {
         eventDisposers.push(
             html.onDidChangeModelContent(
-                debounce(function () {
+                debounce(function() {
                     dispatch('updateDocument', { html: html.getValue() });
                     var editorDom = document.querySelector(
                         '[data-name="HTML"]'
@@ -328,7 +324,7 @@ const editorSetup = ({
     const bindJS = () => {
         eventDisposers.push(
             js.onDidChangeModelContent(
-                debounce(function () {
+                debounce(function() {
                     dispatch('updateDocument', { js: js.getValue() });
                 }, debounceRate)
             )
@@ -356,7 +352,7 @@ const editorSetup = ({
     const bindCSS = () => {
         eventDisposers.push(
             css.onDidChangeModelContent(
-                debounce(function () {
+                debounce(function() {
                     const cssCode = css.getValue();
                     updateCSSInFrame(cssCode);
                     dispatch('updatePartialState', {
@@ -388,7 +384,7 @@ const editorSetup = ({
     const bindJSON = () => {
         eventDisposers.push(
             json.onDidChangeModelContent(
-                debounce(function () {
+                debounce(function() {
                     dispatch('updateDocument', { json: json.getValue() });
                 }, debounceRate)
             )
@@ -415,7 +411,7 @@ const editorSetup = ({
     const bindOpenfin = () => {
         eventDisposers.push(
             openfin.onDidChangeModelContent(
-                debounce(function () {
+                debounce(function() {
                     dispatch('updateDocument', { openfin: openfin.getValue() });
                     window.dispatchEvent(new Event('resize'));
                 }, debounceRate)
@@ -452,59 +448,59 @@ const editorSetup = ({
 
     bindEditors();
     //SAVE
-    html.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {
+    html.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function() {
         save();
     });
 
-    css.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {
+    css.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function() {
         save();
     });
-    js.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {
+    js.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function() {
         save();
     });
 
-    json.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {
+    json.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function() {
         save();
     });
 
     openfin.addCommand(
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
-        function () {
+        function() {
             save();
         }
     );
 
     //Menu
-    html.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function () {
+    html.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function() {
         html.trigger('', 'editor.action.quickCommand');
     });
 
-    css.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function () {
+    css.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function() {
         css.trigger('', 'editor.action.quickCommand');
     });
 
-    js.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function () {
+    js.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function() {
         js.trigger('', 'editor.action.quickCommand');
     });
 
-    json.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function () {
+    json.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P, function() {
         json.trigger('', 'editor.action.quickCommand');
     });
 
     openfin.addCommand(
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_P,
-        function () {
+        function() {
             openfin.trigger('', 'editor.action.quickCommand');
         }
     );
 
     document
         .querySelector('#saveButton')
-        .addEventListener('click', function () {
+        .addEventListener('click', function() {
             save();
         });
 
-    document.querySelector('#menuSave').addEventListener('click', function () {
+    document.querySelector('#menuSave').addEventListener('click', function() {
         save();
     });
 
@@ -592,7 +588,7 @@ const editorSetup = ({
     });
 
     var resizeTimeout;
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', function() {
         this.clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             html.layout();
